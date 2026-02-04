@@ -1,0 +1,28 @@
+.gradle/
+.kotlin/
+build/
+out/
+target/
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# OS files
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+
+# Logs
+*.log
+
+# Local env files
+.env
+.env.*

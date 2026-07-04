@@ -2,6 +2,18 @@
 
 Gradle(Kotlin DSL) 기반의 Spring Boot 멀티 모듈 템플릿입니다. 공통 라이브러리(`lib-common`)와 3개의 API 앱(`api-external`, `api-internal`, `api-backoffice`)으로 구성됩니다.
 
+> Production-oriented Spring Boot multi-module template: one shared library, three deployable API apps, single migration source, and ops-ready defaults (health checks, batch CLI).
+
+## 설계 의도
+
+실무에서 반복되는 "공통 코드 + 성격이 다른 여러 API(내부·외부·백오피스)" 구조를
+처음부터 분리해 두기 위한 템플릿입니다.
+
+- **멀티 모듈 분리** — 공통 도메인/설정은 `lib-common` 한 곳에, 배포 단위는 앱별로. 앱이 늘어나도 공통 코드가 복제되지 않습니다.
+- **단일 마이그레이션 소스** — Flyway 디렉토리를 `lib-common`에 하나만 둬서 앱별 스키마 드리프트를 차단합니다.
+- **운영 기본기 내장** — `/liveness`·`/readiness` 헬스체크(Kubernetes probe 호환), Picocli 기반 배치 서브커맨드를 기본 포함합니다.
+- **web 없이도 실행** — 같은 앱을 API 서버로도, 일회성 배치 CLI로도 실행할 수 있게 구성했습니다.
+
 ## 구조
 ```
 .

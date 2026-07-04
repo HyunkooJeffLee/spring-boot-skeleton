@@ -2,7 +2,7 @@
 
 Gradle(Kotlin DSL) 기반의 Spring Boot 멀티 모듈 템플릿입니다. 공통 라이브러리(`lib-common`)와 3개의 API 앱(`api-external`, `api-internal`, `api-backoffice`)으로 구성됩니다.
 
-> Production-oriented Spring Boot multi-module template: one shared library, three deployable API apps, single migration source, and ops-ready defaults (health checks, batch CLI).
+> Spring Boot multi-module template: one shared library, three deployable API apps, a single migration source, health checks, and a batch CLI.
 
 ## 설계 의도
 
